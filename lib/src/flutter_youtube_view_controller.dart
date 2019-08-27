@@ -63,6 +63,12 @@ class FlutterYoutubeViewController {
       case 'onReady':
         _listener.onReady();
         break;
+      case 'onExitFullScreen':
+        _listener.onExitFullScreen();
+        break;
+      case 'onEnterFullScreen':
+        _listener.onEnterFullScreen();
+        break;
       case 'onStateChange':
         _listener.onStateChange(call.arguments as String);
         break;

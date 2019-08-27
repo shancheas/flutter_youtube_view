@@ -1,6 +1,10 @@
 abstract class YouTubePlayerListener {
   void onReady();
 
+  void onExitFullScreen();
+
+  void onEnterFullScreen();
+
   void onStateChange(String state);
 
   void onError(String error);

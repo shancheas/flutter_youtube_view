@@ -17,6 +17,7 @@ import io.flutter.plugin.platform.PlatformView
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener
 import java.util.concurrent.atomic.AtomicReference
 
 class FlutterYoutubeView(
@@ -113,6 +114,17 @@ class FlutterYoutubeView(
             override fun onCurrentSecond(youTubePlayer: YouTubePlayer, second: Float) {
                 methodChannel.invokeMethod("onCurrentSecond", second)
             }
+        })
+
+        youtubePlayerView.addFullScreenListener(object : YouTubePlayerFullScreenListener {
+            override fun onYouTubePlayerEnterFullScreen() {
+                methodChannel.invokeMethod("onEnterFullScreen", null)
+            }
+
+            override fun onYouTubePlayerExitFullScreen() {
+                methodChannel.invokeMethod("onExitFullScreen", null)
+            }
+
         })
     }
 
