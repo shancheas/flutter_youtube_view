@@ -2,17 +2,6 @@ import UIKit
 
 public extension UIView {
     
-    @available(iOS 6.0, *)
-    public func addConstraints(withFormat: String, views: UIView...) {
-        var viewsDictionary: [String: UIView] = [:]
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            view.translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = view
-        }
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: withFormat, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-    
     @available(iOS 9, *)
     public func fillToSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
