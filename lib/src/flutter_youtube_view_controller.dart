@@ -58,6 +58,14 @@ class FlutterYoutubeViewController {
     await _channel.invokeMethod('scaleMode', mode.index);
   }
 
+  Future<void> enterFullscreen() async {
+    await _channel.invokeMethod('enterFullscreen', null);
+  }
+
+  Future<void> exitFullscreen() async {
+    await _channel.invokeMethod('exitFullscreen', null);
+  }
+
   Future<dynamic> handleEvent(MethodCall call) async {
     switch (call.method) {
       case 'onReady':
