@@ -158,8 +158,8 @@ class FlutterYoutubeView(
                 changeScaleMode(methodCall.arguments as Int)
                 result.success(null)
             }
-            "enterFullscreen" -> youtubePlayer?.enterFullscreen()
-            "exitFullscreen" -> youtubePlayer?.exitFullscreen()
+            "enterFullscreen" -> youtubePlayerView?.enterFullscreen()
+            "exitFullscreen" -> youtubePlayerView?.exitFullscreen()
             else -> result.notImplemented()
         }
     }
